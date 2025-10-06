@@ -18,6 +18,16 @@ const bodyParser = require('body-parser') // Responsável por gerenciar a chegad
 // Import do arquivo de funções
 const dados = require('./modulo/funcoes')
 
+app.get('/', (req, res) => {
+      res.status(200).json({
+          status: true,
+              message: 'API WhatsApp ativa 🚀',
+                  version: '1.0.0',
+                      developer: 'Weslei Santos'
+                        })
+                        })
+
+
 // Retorna a porta do servidor atual, ou colocamos uma porta local
 const PORT = process.env.PORT || 9090
 
