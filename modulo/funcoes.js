@@ -79,9 +79,7 @@ const getMensagensUser = function (number) {
     return message
 }
 
-<<<<<<< HEAD
 console.log(getMensagensUser("11987876567"))
-=======
 // Retornatodas as mensagens trocadas de um usuário com um contato específico 
 const getMensagensContact = function(number, contactNumber){
      // Variável base para o cabeçalho da API
@@ -138,17 +136,13 @@ const getMensagensByKeyword = function(number, contactNumber, keyword){
                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                         
 }
->>>>>>> 0efd7ff (Atualização API WhatsApp)
 
 module.exports = {
     getAllDados,
     getPerfilUser,
     getContatoUser,
-<<<<<<< HEAD
     getMensagensUser
-=======
     getMensagensUser,
     getMensagensContact,
     getMensagensByKeyword
->>>>>>> 0efd7ff (Atualização API WhatsApp)
 }
