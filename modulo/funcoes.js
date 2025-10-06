@@ -83,7 +83,7 @@ console.log(getMensagensUser("11987876567"))
 // Retornatodas as mensagens trocadas de um usuário com um contato específico 
 const getMensagensContact = function(number, contactNumber){
      // Variável base para o cabeçalho da API
-    let message = {status: true, status_code: 200, development: 'Pedro Henrique Araújo', contato: []}
+    let message = {status: true, status_code: 200, development: 'Weslei Santos', contato: []}
 
             // Validação para tratar se existe dados
             dados.contatos['whats-users'].forEach(function(item){
@@ -111,7 +111,7 @@ const getMensagensContact = function(number, contactNumber){
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                 
 const getMensagensByKeyword = function(number, contactNumber, keyword){
-        let message = {status: true, status_code: 200, development: 'Pedro Henrique Araújo', contato: []}
+        let message = {status: true, status_code: 200, development: 'Weslei Santos', contato: []}
 
             dados.contatos['whats-users'].forEach(function(item){
                     if(item.number == number){
