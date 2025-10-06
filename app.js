@@ -19,15 +19,24 @@ const bodyParser = require('body-parser') // Responsável por gerenciar a chegad
 const dados = require('./modulo/funcoes')
 
 // Retorna a porta do servidor atual, ou colocamos uma porta local
+<<<<<<< HEAD
 const PORT = process.PORT || 9090
+=======
+const PORT = process.env.PORT || 9090
+>>>>>>> 0efd7ff (Atualização API WhatsApp)
 
 // Criando uma instância de uma classe do express
 const app = express()
 
 // Configuração de permissões
 app.use((request, response, next)=>{
+<<<<<<< HEAD
     response.header('Acces-Control-Allow-Origin', '*') // Servidor de origem
     response.header('Acces-Control-Allow-Methods', 'GET') // Verbos permitidos na API
+=======
+    response.header('Access-Control-Allow-Origin', '*') // Servidor de origem
+    response.header('Access-Control-Allow-Methods', 'GET') // Verbos permitidos na API
+>>>>>>> 0efd7ff (Atualização API WhatsApp)
     // Carrega as configuraçãoes do CORS da API
     app.use(cors())
     next() // Próximo, carregar os próximos endpoints
@@ -44,6 +53,67 @@ app.get('/v1/dados', function(request, response){
     response.json(dadosJSON)
 })
 
+<<<<<<< HEAD
+=======
+//EndPoint que retorna usuario pelo numero
+app.get('/v1/user/:numero', function(request, response){
+    //Variavel que recebe o parametro da url
+        let user = request.params.numero
+
+            //Pesquisa na função os usuarios
+                let usuarios = dados.getPerfilUser(user)
+                    //Retorna o status code e o JSON
+                        response.status(usuarios.status_code).json(usuarios)
+                        })
+
+                        //EndPoint que retorna informacoes sobre os contatos do usuario
+                        app.get('/v1/user/contatos/:numero', function(request, response){
+                            //Variavel que recebe o parametro da url
+                                let user = request.params.numero
+
+                                    //Pesquisa na função os usuarios
+                                        let contato = dados.getContatoUser(user)
+                                            //Retorna o status code e o JSON
+                                                response.status(contato.status_code).json(contato)
+                                                })
+
+                                                //EndPoint que retorna as mensagens existentes do usuario com todos os contatos
+                                                app.get('/v1/user/messages/:numero', function(request, response){
+                                                    //Variavel que recebe o parametro da url
+                                                        let user = request.params.numero
+
+                                                            //Pesquisa na função os usuarios
+                                                                let mensagens = dados.getMensagensUser(user)
+                                                                    //Retorna o status code e o JSON
+                                                                        response.status(mensagens.status_code).json(mensagens)
+                                                                        })
+
+                                                                        //EndPoint que retorna as mensagens existentes do usuario com um contato especifico
+                                                                        app.get('/v1/user/message/contato', function(request, response){
+                                                                            //Variavel que recebe o parametro via Query
+                                                                                let user = request.query.user
+                                                                                    let contato = request.query.contato
+
+                                                                                        //Pesquisa na função
+                                                                                            let mensagens = dados.getMensagensContact(user, contato)
+                                                                                                //Retorna o status code e o JSON
+                                                                                                    response.status(mensagens.status_code).json(mensagens)
+                                                                                                    })
+
+                                                                                                    //EndPoint que retorna as mensagens de acordo com uma palavra chave
+                                                                                                    app.get('/v1/user/message/keyword', function(request, response){
+                                                                                                        //Variavel que recebe o parametro via Query
+                                                                                                            let user = request.query.user
+                                                                                                                let contato = request.query.contato
+                                                                                                                    let keyword = request.query.keyword
+
+                                                                                                                        //Pesquisa na função
+                                                                                                                            let mensagens = dados.getMensagensByKeyword(user, contato, keyword)
+                                                                                                                                //Retorna o status code e o JSON
+                                                                                                                                    response.status(mensagens.status_code).json(mensagens)
+                                                                                                                                    })
+
+>>>>>>> 0efd7ff (Atualização API WhatsApp)
 
 // Start na API
 app.listen(PORT, function(){

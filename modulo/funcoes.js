@@ -79,11 +79,76 @@ const getMensagensUser = function (number) {
     return message
 }
 
+<<<<<<< HEAD
 console.log(getMensagensUser("11987876567"))
+=======
+// Retornatodas as mensagens trocadas de um usuário com um contato específico 
+const getMensagensContact = function(number, contactNumber){
+     // Variável base para o cabeçalho da API
+    let message = {status: true, status_code: 200, development: 'Pedro Henrique Araújo', contato: []}
+
+            // Validação para tratar se existe dados
+            dados.contatos['whats-users'].forEach(function(item){
+                    if(item.number == number){
+                                item.contacts.forEach(function (contatos){
+                                                if(contatos.number == contactNumber){
+                                                                    let json = {}
+                                                                                        json.nome = contatos.name
+                                                                                                            json.numero = contatos.number
+                                                                                                                                json.mensagens = contatos.messages
+
+                                                                                                                                                    message.contato.push(json)
+                                                                                                                                                                    }
+                                                                                                                                                                                   
+                                                                                                                                                                                               })
+                                                                                                                                                                                                       }
+                                                                                                                                                                                                           })
+
+                                                                                                                                                                                                               if(message.contato.length > 0){
+                                                                                                                                                                                                                       return message
+                                                                                                                                                                                                                           }else{
+                                                                                                                                                                                                                                   return MESSAGE_ERRO
+                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                
+const getMensagensByKeyword = function(number, contactNumber, keyword){
+        let message = {status: true, status_code: 200, development: 'Pedro Henrique Araújo', contato: []}
+
+            dados.contatos['whats-users'].forEach(function(item){
+                    if(item.number == number){
+                                item.contacts.forEach(function(contato){
+                                                if(contato.number == contactNumber){
+                                                                    contato.messages.forEach(function(mensagem){
+                                                                                            if(mensagem.content.includes(keyword)){
+                                                                                                                        
+                                                                                                                                                    message.contato.push(mensagem.content)
+                                                                                                                                                                            }
+                                                                                                                                                                                                })
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                        })
+
+                                                                                                                                                                                                                                            if(message.contato.length > 0){
+                                                                                                                                                                                                                                                    return message
+                                                                                                                                                                                                                                                        }else{
+                                                                                                                                                                                                                                                                return MESSAGE_ERRO
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                        
+}
+>>>>>>> 0efd7ff (Atualização API WhatsApp)
 
 module.exports = {
     getAllDados,
     getPerfilUser,
     getContatoUser,
+<<<<<<< HEAD
     getMensagensUser
+=======
+    getMensagensUser,
+    getMensagensContact,
+    getMensagensByKeyword
+>>>>>>> 0efd7ff (Atualização API WhatsApp)
 }
