@@ -138,11 +138,11 @@ const getMensagensByKeyword = function(number, contactNumber, keyword){
 }
 
 module.exports = {
-    getAllDados,
-    getPerfilUser,
-    getContatoUser,
-    getMensagensUser
-    getMensagensUser,
-    getMensagensContact,
-    getMensagensByKeyword
-}
+        getAllDados,
+            getPerfilUser,
+                getContatoUser,
+                    getMensagensUser,
+                        getMensagensContact,
+                            getMensagensByKeyword
+                            }
+
