@@ -19,7 +19,6 @@ const bodyParser = require('body-parser') // Responsável por gerenciar a chegad
 const dados = require('./modulo/funcoes')
 
 // Retorna a porta do servidor atual, ou colocamos uma porta local
-const PORT = process.PORT || 9090
 const PORT = process.env.PORT || 9090
 
 // Criando uma instância de uma classe do express
