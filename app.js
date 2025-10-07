@@ -20,8 +20,10 @@ const dados = require('./modulo/funcoes');
 // Criando uma instância do express
 const app = express();
 
-// Porta do servidor
-const PORT = process.env.PORT || 9090;
+const PORT = process.env.PORT || 10000; // usa porta do Render ou 10000 localmente
+app.listen(PORT, () => {
+    console.log(`API aguardando requisições na porta ${PORT}...`);
+});
 
 // Configuração de permissões (CORS)
 app.use((request, response, next) => {
